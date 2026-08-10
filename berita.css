@@ -1,0 +1,786 @@
+/* =====================================================
+   HALAMAN BERITA
+   Pondok Pesantren Darussalam
+===================================================== */
+
+:root {
+  --primary: #156734;
+  --secondary: #22a652;
+  --gold: #f4c542;
+  --white: #ffffff;
+  --bg: #f7faf8;
+  --dark: #222;
+  --text: #666;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.news-hero {
+  position: relative;
+
+  height: 70vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 0 8%;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(rgba(21, 103, 52, 0.82), rgba(21, 103, 52, 0.82)),
+    url("../images/berita-banner.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.news-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  left: -150px;
+  top: -180px;
+
+  animation: blob 14s infinite linear;
+}
+
+.news-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  right: -120px;
+  bottom: -100px;
+
+  animation: blob2 10s infinite linear;
+}
+
+.news-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  color: #fff;
+}
+
+.news-content span {
+  display: inline-block;
+
+  padding: 10px 24px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(10px);
+
+  margin-bottom: 25px;
+
+  font-weight: 600;
+}
+
+.news-content h1 {
+  font-size: 58px;
+
+  line-height: 1.2;
+
+  margin-bottom: 25px;
+}
+
+.news-content p {
+  font-size: 18px;
+
+  line-height: 34px;
+}
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.news-search {
+  padding: 70px 8%;
+
+  background: #fff;
+}
+
+.search-box {
+  max-width: 700px;
+
+  margin: auto;
+
+  display: flex;
+
+  background: #fff;
+
+  border-radius: 60px;
+
+  overflow: hidden;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.search-box input {
+  flex: 1;
+
+  border: none;
+
+  outline: none;
+
+  padding: 22px 30px;
+
+  font-size: 16px;
+}
+
+.search-box button {
+  width: 80px;
+
+  border: none;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  cursor: pointer;
+
+  transition: 0.35s;
+}
+
+.search-box button:hover {
+  background: var(--secondary);
+}
+
+/* =====================================================
+   KATEGORI
+===================================================== */
+
+.news-category {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  padding: 0 8% 80px;
+
+  background: #fff;
+}
+
+.news-category button {
+  padding: 14px 28px;
+
+  border: none;
+
+  border-radius: 40px;
+
+  background: #eef7f0;
+
+  color: var(--primary);
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.35s;
+}
+
+.news-category button:hover,
+.news-category button.active {
+  background: var(--primary);
+
+  color: #fff;
+}
+
+/* =====================================================
+   FEATURED NEWS
+===================================================== */
+
+.featured-news {
+  padding: 50px 8%;
+
+  background: var(--bg);
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 50px;
+
+  align-items: center;
+}
+
+.featured-image img {
+  width: 100%;
+
+  border-radius: 24px;
+
+  display: block;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.featured-content span {
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  border-radius: 25px;
+
+  margin-bottom: 20px;
+}
+
+.featured-content h2 {
+  font-size: 40px;
+
+  margin-bottom: 25px;
+
+  color: var(--dark);
+}
+
+.featured-content p {
+  color: var(--text);
+
+  line-height: 32px;
+
+  margin-bottom: 35px;
+}
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-title {
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+.section-title span {
+  color: var(--primary);
+
+  font-weight: 700;
+}
+
+.section-title h2 {
+  font-size: 42px;
+
+  margin-top: 15px;
+}
+/* =====================================================
+   BERITA TERBARU
+===================================================== */
+
+.latest-news {
+  padding: 110px 8%;
+  background: #ffffff;
+}
+
+.news-grid {
+  max-width: 500px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 35px;
+}
+
+/* ==========================
+   CARD BERITA
+========================== */
+
+.news-card {
+  background: #fff;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: 0.35s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================
+   GAMBAR
+========================== */
+
+.news-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: 0.5s;
+  display: block;
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.08);
+}
+
+/* ==========================
+   BADGE
+========================== */
+
+.badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.badge.prestasi {
+  background: #ff9800;
+}
+
+.badge.psb {
+  background: #1976d2;
+}
+
+.badge.pengumuman {
+  background: #d32f2f;
+}
+
+/* ==========================
+   ISI BERITA
+========================== */
+
+.news-info {
+  padding: 28px;
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #888;
+}
+
+.news-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.news-meta i {
+  color: var(--primary);
+}
+
+.news-info h3 {
+  font-size: 24px;
+  line-height: 34px;
+  color: var(--dark);
+  margin-bottom: 18px;
+  transition: 0.3s;
+}
+
+.news-card:hover h3 {
+  color: var(--primary);
+}
+
+.news-info p {
+  color: var(--text);
+  line-height: 30px;
+  margin-bottom: 25px;
+}
+
+/* ==========================
+   LINK
+========================== */
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  transition: 0.35s;
+}
+
+.read-more i {
+  transition: 0.35s;
+}
+
+.read-more:hover {
+  color: var(--secondary);
+}
+
+.read-more:hover i {
+  transform: translateX(8px);
+}
+/* =====================================================
+   NEWSLETTER
+===================================================== */
+
+.newsletter {
+  padding: 120px 8%;
+
+  background: linear-gradient(135deg, #156734, #22a652);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.newsletter::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  top: -180px;
+
+  left: -120px;
+
+  animation: blob 15s linear infinite;
+}
+
+.newsletter::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+
+  height: 260px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  bottom: -100px;
+
+  right: -80px;
+
+  animation: blob2 12s linear infinite;
+}
+
+.newsletter-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+  margin: auto;
+
+  text-align: center;
+
+  color: #fff;
+}
+
+.newsletter-content span {
+  display: inline-block;
+
+  padding: 10px 24px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  margin-bottom: 25px;
+}
+
+.newsletter-content h2 {
+  font-size: 48px;
+
+  margin-bottom: 25px;
+}
+
+.newsletter-content p {
+  line-height: 34px;
+
+  margin-bottom: 45px;
+
+  opacity: 0.95;
+}
+
+.newsletter form {
+  display: flex;
+
+  max-width: 700px;
+
+  margin: auto;
+
+  background: #fff;
+
+  border-radius: 60px;
+
+  overflow: hidden;
+}
+
+.newsletter input {
+  flex: 1;
+
+  border: none;
+
+  outline: none;
+
+  padding: 22px 30px;
+
+  font-size: 16px;
+}
+
+.newsletter button {
+  border: none;
+
+  background: #f4c542;
+
+  color: #222;
+
+  padding: 0 35px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  transition: 0.35s;
+}
+
+.newsletter button:hover {
+  background: #ffd95c;
+}
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  padding: 80px 0;
+}
+
+.pagination a {
+  width: 50px;
+
+  height: 50px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #eef7f0;
+
+  color: #156734;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition: 0.35s;
+}
+
+.pagination a.active,
+.pagination a:hover {
+  background: #156734;
+
+  color: #fff;
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes blob {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate(40px, 25px) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes blob2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-30px, -30px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+  .news-content h1 {
+    font-size: 42px;
+  }
+
+  .featured-news {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-content {
+    text-align: center;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .news-hero {
+    height: 60vh;
+
+    padding: 0 5%;
+  }
+
+  .news-content h1 {
+    font-size: 32px;
+
+    line-height: 45px;
+  }
+
+  .news-content p {
+    font-size: 16px;
+
+    line-height: 28px;
+  }
+
+  .news-search {
+    padding: 50px 5%;
+  }
+
+  .search-box {
+    flex-direction: column;
+
+    border-radius: 20px;
+  }
+
+  .search-box input {
+    padding: 18px;
+  }
+
+  .search-box button {
+    width: 100%;
+
+    padding: 18px;
+  }
+
+  .featured-news,
+  .latest-news {
+    padding: 80px 5%;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter {
+    padding: 80px 5%;
+  }
+
+  .newsletter h2 {
+    font-size: 34px;
+  }
+
+  .newsletter form {
+    flex-direction: column;
+
+    border-radius: 20px;
+  }
+
+  .newsletter input {
+    padding: 18px;
+  }
+
+  .newsletter button {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-meta {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .news-info h3 {
+    font-size: 21px;
+
+    line-height: 30px;
+  }
+
+  .section-title h2 {
+    font-size: 30px;
+  }
+}
+/* ===========================
+   OFFSET NAVBAR
+=========================== */
+
+.news-hero {
+  margin-top: 90px;
+}

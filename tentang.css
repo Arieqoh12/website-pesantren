@@ -1,0 +1,788 @@
+/* ==================================================
+   HALAMAN TENTANG
+   Pondok Pesantren Darussalam
+================================================== */
+
+:root {
+  --primary: #156734;
+  --secondary: #1b8d45;
+  --gold: #f4c542;
+  --dark: #1d1d1d;
+  --gray: #666;
+  --light: #ffffff;
+  --bg: #f7faf8;
+}
+
+/* ================= HERO ================= */
+
+.about-hero {
+  position: relative;
+
+  height: 160vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 0 5%;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(rgba(21, 103, 52, 0.75), rgba(21, 103, 52, 0.75)),
+    url("../images/dsa.jpeg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.about-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 600px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+
+  top: -180px;
+  left: -120px;
+
+  animation: blob 12s infinite linear;
+}
+
+.about-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border-radius: 50%;
+
+  bottom: -120px;
+  right: -120px;
+
+  animation: blob2 10s infinite linear;
+}
+
+.overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  color: white;
+
+  max-width: 850px;
+}
+
+.hero-content span {
+  display: inline-block;
+
+  padding: 10px 22px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  border-radius: 30px;
+
+  backdrop-filter: blur(10px);
+
+  font-weight: 600;
+
+  margin-bottom: 25px;
+}
+
+.hero-content h1 {
+  font-size: 60px;
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  margin-bottom: 25px;
+}
+
+.hero-content p {
+  font-size: 19px;
+
+  line-height: 34px;
+
+  opacity: 0.95;
+}
+
+/* ================= ABOUT ================= */
+
+.about-section {
+  padding: 120px 8%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+
+  align-items: center;
+
+  background: white;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+
+  border-radius: 25px;
+
+  display: block;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+
+  transition: 0.5s;
+}
+
+.about-image:hover img {
+  transform: scale(1.03);
+}
+
+.about-image::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  background: #e8f6ec;
+
+  border-radius: 30px;
+
+  left: -25px;
+  top: -25px;
+
+  z-index: -1;
+}
+
+.about-image::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  background: #156734;
+
+  opacity: 0.12;
+
+  border-radius: 50%;
+
+  right: -35px;
+  bottom: -35px;
+
+  z-index: -1;
+}
+
+.about-text h5 {
+  color: var(--primary);
+
+  font-size: 18px;
+
+  margin-bottom: 15px;
+
+  letter-spacing: 1px;
+}
+
+.about-text h2 {
+  font-size: 46px;
+
+  line-height: 60px;
+
+  margin-bottom: 25px;
+
+  color: #222;
+}
+
+.about-text p {
+  font-size: 17px;
+
+  line-height: 34px;
+
+  color: #666;
+
+  margin-bottom: 20px;
+}
+
+.about-button {
+  margin-top: 35px;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-primary {
+  display: inline-block;
+
+  padding: 18px 38px;
+
+  background: linear-gradient(135deg, #156734, #22a652);
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 50px;
+
+  font-weight: 600;
+
+  transition: 0.35s;
+
+  box-shadow: 0 15px 30px rgba(21, 103, 52, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 20px 40px rgba(21, 103, 52, 0.35);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes blob {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate(40px, 25px) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes blob2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-30px, -30px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .about-section {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .about-text h2 {
+    font-size: 34px;
+
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 65vh;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+
+    line-height: 48px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+
+    line-height: 28px;
+  }
+
+  .about-section {
+    padding: 80px 6%;
+  }
+
+  .about-text h2 {
+    font-size: 30px;
+
+    line-height: 42px;
+  }
+}
+/* =====================================================
+   VISI MISI
+===================================================== */
+
+.vision {
+  padding: 100px 8%;
+  background: #f8faf8;
+}
+
+.vision-grid {
+  max-width: 1200px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 35px;
+}
+
+.vision-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: 0.35s ease;
+  border-top: 5px solid #156734;
+}
+
+.vision-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.vision-card i {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #156734;
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.vision-card h3 {
+  font-size: 28px;
+  color: #156734;
+  margin-bottom: 20px;
+}
+
+.vision-card p {
+  line-height: 30px;
+  color: #666;
+}
+
+.vision-card ul {
+  margin-left: 20px;
+  color: #666;
+}
+
+.vision-card ul li {
+  margin-bottom: 12px;
+  line-height: 28px;
+}
+
+/* =====================================================
+   PIMPINAN PONDOK
+===================================================== */
+
+.leaders {
+  padding: 100px 8%;
+  background: #fff;
+}
+
+.leader-grid {
+  max-width: 1200px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.leader-card {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: 0.35s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-12px);
+}
+
+.leader-card img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.leader-card:hover img {
+  transform: scale(1.08);
+}
+
+.leader-card h3 {
+  margin-top: 25px;
+  font-size: 24px;
+  color: #222;
+}
+
+.leader-card p {
+  padding-bottom: 30px;
+  color: #156734;
+  font-weight: 600;
+}
+
+/* =====================================================
+   NILAI PONDOK
+===================================================== */
+
+.values {
+  padding: 100px 8%;
+  background: #f8faf8;
+}
+
+.value-grid {
+  max-width: 1200px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.value-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 40px 25px;
+  text-align: center;
+  transition: 0.35s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  background: #156734;
+}
+
+.value-card i {
+  font-size: 55px;
+  color: #156734;
+  margin-bottom: 20px;
+  transition: 0.35s;
+}
+
+.value-card h3 {
+  color: #222;
+  transition: 0.35s;
+}
+
+.value-card:hover i,
+.value-card:hover h3 {
+  color: #fff;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leader-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .vision,
+  .leaders,
+  .values {
+    padding: 70px 5%;
+  }
+
+  .vision-card {
+    padding: 30px;
+  }
+
+  .leader-grid,
+  .value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leader-card img {
+    height: 280px;
+  }
+
+  .vision-card h3 {
+    font-size: 24px;
+  }
+}
+/* =====================================================
+   TIMELINE SEJARAH
+===================================================== */
+
+.history {
+  padding: 100px 8%;
+  background: #ffffff;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 60px auto 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #156734;
+  border-radius: 10px;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 50px;
+  margin-bottom: 60px;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.year {
+  width: 70px;
+  height: 70px;
+  background: #156734;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  right: -35px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-item:nth-child(even) .year {
+  left: -35px;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: 0.35s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-8px);
+}
+
+.timeline-content h3 {
+  color: #156734;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.timeline-content p {
+  line-height: 30px;
+  color: #666;
+}
+/* =====================================================
+   CALL TO ACTION
+===================================================== */
+
+.cta {
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 90px 50px;
+  text-align: center;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #156734, #1fa355);
+  color: #fff;
+  box-shadow: 0 25px 60px rgba(21, 103, 52, 0.25);
+}
+
+/* Background Decoration */
+
+.cta::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  top: -150px;
+  left: -120px;
+  animation: blob 14s linear infinite;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  right: -80px;
+  bottom: -80px;
+  animation: blob2 12s linear infinite;
+}
+
+.cta > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Badge */
+
+.cta-badge {
+  display: inline-block;
+  padding: 10px 22px;
+  margin-bottom: 25px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Judul */
+
+.cta h2 {
+  font-size: 48px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Deskripsi */
+
+.cta p {
+  max-width: 700px;
+  margin: 0 auto 35px;
+  font-size: 18px;
+  line-height: 32px;
+  opacity: 0.95;
+}
+
+/* Tombol */
+
+.cta .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 42px;
+  background: #fff;
+  color: #156734;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.35s ease;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cta .btn-primary:hover {
+  background: #f4c542;
+  color: #156734;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cta .btn-primary i {
+  transition: 0.3s;
+}
+
+.cta .btn-primary:hover i {
+  transform: translateX(5px);
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+
+@media (max-width: 992px) {
+  .cta {
+    margin: 80px 30px;
+    padding: 70px 35px;
+  }
+
+  .cta h2 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta {
+    margin: 60px 20px;
+    padding: 55px 25px;
+    border-radius: 25px;
+  }
+
+  .cta h2 {
+    font-size: 30px;
+    line-height: 1.4;
+  }
+
+  .cta p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .cta .btn-primary {
+    width: 100%;
+    max-width: 280px;
+    margin: auto;
+  }
+}
